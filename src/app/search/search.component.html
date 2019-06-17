@@ -3,18 +3,20 @@
 </head>
 
 <div class="search group">
+
   <div class="search">
     <h2>Remember YOLO</h2>
   </div>
-  <div class="search input">  
-    <input [(ngModel)]="symbol" (keyup.enter)="search()">
-    <button class='btn btn-primary' (click)="search()">Search Ticker</button>
+
+  <div class="search input">
+    <input class="searchInp search input" [(ngModel)]="symbol" (keyup.enter)="search()">
   </div>
 
-  <div class="save group" *ngIf="display">
-    <span>Ticker: {{ saveSymbol }}</span>
-    <button class='button' (click)="save()">Save to favorites</button>
-  </div>
+  <button class='btn btn-primary searchBtn' (click)="search()">Search Ticker</button>
+
+  <div *ngIf="display" class="save group">'{{ saveSymbol }}'</div>
+  <button *ngIf="display" class='btn saveBtn' (click)="save()">Save to favorites</button>
+
 </div>
 
 <div *ngIf="display">

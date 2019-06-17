@@ -1,26 +1,50 @@
-.search{
+.search {
     display: flex;
     justify-content: center;
+    padding: 10px;
 }
 
-.save.group{
+.save.group {
     display: flex;
     justify-content: center;
     margin-top: 15px;
 }
 
-.search.group{
+.search.group {
     display: flex;
     flex-direction: column;
 }
 
-.search.input{
+.search.input {
     display: flex;
     justify-content: center;
+    padding: 8px;
+    text-align: center;
 }
 
-.btn.btn-primary{
+.btn.btn-primary {
     color: black;
     background-color: yellow;
     border-color: yellow;
+    margin-top: 5px;
+}
+
+.searchInp {
+  padding: 5px;
+}
+
+.searchBtn {
+  margin: auto;
+}
+
+.ticker {
+  padding: 10px;
+}
+
+.saveBtn {
+  color: black;
+  background-color: orange;
+  border-color: orange;
+  margin-top: 5px;
+  margin: auto;
 }

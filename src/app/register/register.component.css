@@ -4,8 +4,13 @@
     background-color: rgb(0, 0, 0)
 }
 
-.btn.btn-primary{
+.btn.btn-primary {
     color: black;
     background-color: yellow;
     border-color: yellow;
+}
+
+.welcome {
+  color: #5659b9;
+  font-weight: bold;
 }

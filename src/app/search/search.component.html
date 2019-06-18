@@ -5,11 +5,11 @@
 <div class="search group">
 
   <div class="search">
-    <h2>Remember YOLO</h2>
+    <h2 class="searchHdr">Remember YOLO</h2>
   </div>
 
   <div class="search input">
-    <input class="searchInp search input" [(ngModel)]="symbol" (keyup.enter)="search()">
+    <input class="search input" placeholder="?" [(ngModel)]="symbol" (keyup.enter)="search()">
   </div>
 
   <button class='btn btn-primary searchBtn' (click)="search()">Search Ticker</button>

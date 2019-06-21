@@ -8,6 +8,10 @@
     <h2 class="searchHdr">Remember YOLO</h2>
   </div>
 
+  <div *ngIf="saveSymbols">
+    <span *ngFor="let symbol of saveSymbols">{{ symbol }}</span>
+  </div>
+
   <div class="search input">
     <input class="search input" placeholder="...." [(ngModel)]="symbol" (keyup.enter)="search()">
   </div>
@@ -43,7 +47,9 @@
         <td *ngFor="let label of lineChartLabels; let j=index">{{d && d.data[j]}}</td>
       </tr>
     </table>
+    <!--
     <button (click)="randomize()">DO NOT TOUCH!</button>
+    -->
   </div>
   </div>
 </div>

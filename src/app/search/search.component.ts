@@ -13,6 +13,7 @@ export class SearchComponent implements OnInit {
   results: any;
   symbol: any = '';
   saveSymbol: any = '';
+  saveSymbols  = [];
   data: any;
   lastRefreshed: any;
   chartData: Array<any> = [
@@ -21,8 +22,8 @@ export class SearchComponent implements OnInit {
   chartLabels: any = [];
   display: any = false;
   stockObject: any = {
-    "ticker": '',
-    "id": ''
+    'ticker': '',
+    'id': ''
   };
 
     // lineChart
@@ -144,4 +145,10 @@ export class SearchComponent implements OnInit {
       })
   }
   */
+
+  save() {
+    this.saveSymbols.push(this.saveSymbol)
+    this.saveSymbol = '';
+  }
+
 }

@@ -21,18 +21,18 @@ export class SearchComponent implements OnInit {
   chartLabels: any = [];
   display: any = false;
   stockObject: any = {
-    "ticker": "",
-    "id": ""
-  }
-  
+    "ticker": '',
+    "id": ''
+  };
+
     // lineChart
-  public lineChartData:Array<any> = [
+  public lineChartData: Array<any> = [
     {data: [65, 59, 80, 81, 56, 55, 40], label: 'Series A'},
     {data: [28, 48, 40, 19, 86, 27, 90], label: 'Series B'},
     {data: [18, 48, 77, 9, 100, 27, 40], label: 'Series C'}
   ];
-  public lineChartLabels:Array<any> = ['January', 'February', 'March', 'April', 'May', 'June', 'July'];
-  public lineChartOptions:any = {
+  public lineChartLabels: Array<any> = ['January', 'February', 'March', 'April', 'May', 'June', 'July'];
+  public lineChartOptions: any = {
     responsive: true
   };
   public lineChartColors:Array<any> = [
@@ -61,11 +61,11 @@ export class SearchComponent implements OnInit {
       pointHoverBorderColor: 'rgba(148,159,177,0.8)'
     }
   ];
-  public lineChartLegend:boolean = true;
-  public lineChartType:string = 'line';
- 
+  public lineChartLegend: boolean = true;
+  public lineChartType: string = 'line';
+
   public randomize():void {
-    let _lineChartData:Array<any> = new Array(this.lineChartData.length);
+    let _lineChartData: Array<any> = new Array(this.lineChartData.length);
     for (let i = 0; i < this.lineChartData.length; i++) {
       _lineChartData[i] = {data: new Array(this.lineChartData[i].data.length), label: this.lineChartData[i].label};
       for (let j = 0; j < this.lineChartData[i].data.length; j++) {
@@ -74,23 +74,23 @@ export class SearchComponent implements OnInit {
     }
     this.lineChartData = _lineChartData;
   }
- 
+
   // events
   public chartClicked(e:any):void {
     console.log(e);
   }
- 
+
   public chartHovered(e:any):void {
     console.log(e);
   }
 
-  
-  constructor(private _stock: StockService, private _save: SaveService) { 
+
+  constructor(private _stock: StockService, private _save: SaveService) {
   }
 
   ngOnInit() {
   }
-  
+
   search(){
       this.chartData = [{data: [], label: 'Opening Dollar Values'}];
       this.display = false;
@@ -105,37 +105,37 @@ export class SearchComponent implements OnInit {
           console.log("chartData from search component", this.chartData)
           this.lineChartData = this.chartData;
           this.lineChartLabels = this._stock.dateValues;
-          
+
           this.display = true;
-          
+
           this.saveSymbol = this.symbol
           this.symbol = ''
-          
+
           console.log("dateValues from search component", this._stock.dateValues)
           /*
           //approach without pipe
           //this.returnedPhone = this.returnedData.phone_number
           console.log(this.results["Meta Data"]["3. Last Refreshed"])
-          
+
           //access 'last refreshed date' to display it's 'open' property
           this.lastRefreshed = this.results["Meta Data"]["3. Last Refreshed"]
           console.log("lastRefreshed", this.lastRefreshed)
           console.log("open property", this.results["Time Series (Daily)"][this.lastRefreshed]["1. open"])
-          
+
           //get object properties and push them into an empty array
           let dateProperties = Object.keys(this.results["Time Series (Daily)"]);
           let something = [];
-          for (let date of dateProperties) { 
+          for (let date of dateProperties) {
             something.push(dateProperties[date]);
             console.log("dates array", something)
           }
           */
         })
-      
+
   }
   /*
   save(){
-    
+
     this._save.saveStock(this.stockObject)
       .subscribe( (data:any) => {
         let id = sessionStorage.getItem(this.data.userId);

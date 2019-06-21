@@ -4,6 +4,10 @@
   background-color: #f4f4f4;
 }
 
+.login-wrapper .login {
+  background: white;
+}
+
 .btn.btn-primary {
     color: black;
     background-color: yellow;

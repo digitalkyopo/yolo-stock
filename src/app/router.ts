@@ -8,7 +8,7 @@ import { MainComponent } from './main/main.component';
 import { LoginComponent } from './login/login.component';
 
 export const router: Routes = [
-    { path: '', redirectTo: 'login', pathMatch: 'full' },
+    { path: '', redirectTo: 'search', pathMatch: 'full' },
     { path: 'app', component: AppComponent },
     { path: 'login', component: LoginComponent },
     { path: 'register', component: RegisterComponent },
